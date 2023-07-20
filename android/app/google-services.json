@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1058562584396",
+    "project_id": "zesdro-e2100",
+    "storage_bucket": "zesdro-e2100.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1058562584396:android:da6df11767293b1877e9e9",
+        "android_client_info": {
+          "package_name": "com.example.zesdro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1058562584396-rasf263ja3m5t36knsfcd35uamb13s1p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6V34d50uIbIAEcPescgECiC6leVhJwRE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1058562584396-rasf263ja3m5t36knsfcd35uamb13s1p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

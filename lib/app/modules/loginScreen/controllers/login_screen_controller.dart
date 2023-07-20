@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:zesdro/app/model/userModel.dart';
+import 'package:zesdro/app/routes/app_pages.dart';
 import 'package:zesdro/app/utils/globalVariables.dart';
 import 'package:zesdro/app/utils/text.dart';
 
@@ -31,9 +32,14 @@ class LoginScreenController extends GetxController {
         );
         GetStorage().write(TextData.user, user!.toMap());
         GlobalVariables.instance.user = user;
+
+        Get.offNamed(Routes.HOME);
+      } else {
+        Get.showSnackbar(const GetSnackBar(title: "Something went wrong"));
       }
     } catch (error) {
       print(error);
+      Get.showSnackbar(const GetSnackBar(title: "Something went wrong"));
     }
   }
 }

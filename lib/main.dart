@@ -15,8 +15,8 @@ void main() async {
   GetStorage.init();
   runApp(
     GetMaterialApp(
-      debugShowCheckedModeBanner:false,
-      title: "Application",
+      debugShowCheckedModeBanner: false,
+      title: "Zesdro",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     ),

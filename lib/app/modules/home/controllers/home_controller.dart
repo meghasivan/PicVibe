@@ -1,23 +1,18 @@
 import 'package:get/get.dart';
+import 'package:zesdro/app/routes/app_pages.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
-
-  final count = 0.obs;
+  var images = [].obs;
   @override
   void onInit() {
     super.onInit();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  gotoProfilePage() {
+    Get.toNamed(Routes.PROFILE_SCREEN);
   }
 
-  @override
-  void onClose() {
-    super.onClose();
+  gotoEditorPage() {
+    Get.toNamed(Routes.EDITING_SCREEN);
   }
-
-  void increment() => count.value++;
 }

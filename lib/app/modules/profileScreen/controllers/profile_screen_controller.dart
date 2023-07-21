@@ -23,7 +23,6 @@ class ProfileScreenController extends GetxController {
     );
 
     if(editedImage != null){
-      // can post
       final convertedImage = await ImageUtils.convert(
           editedImage, // <-- Uint8List/path of image
           format: 'jpg',

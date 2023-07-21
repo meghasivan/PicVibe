@@ -28,6 +28,7 @@ class SplashScreenController extends GetxController {
       }
       
       if(GlobalVariables.instance.user != null){
+        GlobalVariables.instance.googleSignIn.signInSilently();
         Get.offNamed(Routes.HOME);
       }else{
         Get.offNamed(Routes.LOGIN_SCREEN);

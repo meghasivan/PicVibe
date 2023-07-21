@@ -11,12 +11,6 @@ import 'package:zesdro/app/utils/text.dart';
 class LoginScreenController extends GetxController {
   UserModel? user;
 
-  GoogleSignIn googleSignIn = GoogleSignIn(
-    scopes: [
-      'email',
-    ],
-  );
-
   @override
   void onInit() {
     super.onInit();
@@ -24,7 +18,8 @@ class LoginScreenController extends GetxController {
 
   Future<void> handleSignIn() async {
     try {
-      GoogleSignInAccount? data = await googleSignIn.signIn();
+      GoogleSignInAccount? data = await  GlobalVariables.instance.googleSignIn.signIn();
+      
       if (data != null) {
         int id = GlobalVariables.instance.objectbox.checkUserExist(data.email);
         if(id == 0){
@@ -46,11 +41,17 @@ class LoginScreenController extends GetxController {
 
         Get.offNamed(Routes.HOME);
       } else {
-        Get.showSnackbar(const GetSnackBar(title: "Something went wrong"));
+         Get.snackbar(
+                       "Something went wrong","",
+                      snackPosition: SnackPosition.BOTTOM
+                  );
       }
     } catch (error) {
       print(error);
-      Get.showSnackbar(const GetSnackBar(title: "Something went wrong"));
+       Get.snackbar(
+                       "Something went wrong","",
+                      snackPosition: SnackPosition.BOTTOM
+                  );
     }
   }
 }

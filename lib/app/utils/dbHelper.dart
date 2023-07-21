@@ -1,5 +1,6 @@
 import 'package:path_provider/path_provider.dart';
 import 'package:path/path.dart' as p;
+import 'package:zesdro/app/utils/globalVariables.dart';
 
 import '../model/imageFiles.dart';
 import '../model/userDBModel.dart';
@@ -28,7 +29,7 @@ class ObjectBox {
 
   Stream<List<ImageFiles>> getImages() {
 
-    final builder = _imageFileBox.query().order(ImageFiles_.id,flags: Order.descending);
+    final builder = _imageFileBox.query(ImageFiles_.uid.equals(GlobalVariables.instance.user!.uid)).order(ImageFiles_.id,flags: Order.descending);
 
     return builder
         .watch(triggerImmediately: true)

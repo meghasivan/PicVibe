@@ -69,9 +69,14 @@ class ProfileScreenView extends GetView<ProfileScreenController> {
                   const SizedBox(
                     height: 20,
                   ),
+                  TextButton(onPressed: controller.logout, child: const Text("Sign Out")),
+                  const SizedBox(
+                    height: 20,
+                  ),
                   StreamBuilder<List<ImageFiles>>(
                       stream: GlobalVariables.instance.objectbox.getImages(),
                       builder: (context, snapshot){
+                        if(snapshot.hasData && snapshot.data!.isNotEmpty){
                         return  Column(
                           children: 
                         List.generate(
@@ -121,6 +126,14 @@ class ProfileScreenView extends GetView<ProfileScreenController> {
                         return Row(
                             children: children,
                           );}));
+                        }else{
+                          return Container(
+                            height: Get.height * 0.5,
+                            child: const Center(
+                              child: Text("There is No Images"),
+                            ),
+                          );
+                        }
                       }),
                  
                 ]),

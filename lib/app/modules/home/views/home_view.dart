@@ -47,16 +47,50 @@ class HomeView extends GetView<HomeController> {
           backgroundColor: ProjectColors.white),
       body: StreamBuilder<List<ImageFiles>>(
                   stream: GlobalVariables.instance.objectbox.getImages(),
-                  builder: (context, snapshot) => ListView.builder(
+                  builder: (context, snapshot) => (snapshot.hasData && snapshot.data!.isNotEmpty)? ListView.builder(
           shrinkWrap: true,
           padding: const EdgeInsets.symmetric(horizontal: 10.0),
           itemCount: snapshot.hasData ? snapshot.data!.length : 0,
           itemBuilder: (context, index) {
             return Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.memory(snapshot.data![index].fileData),
+              child: SizedBox(
+                child: Stack(
+                  children: [
+                    Positioned(child: Image.memory(snapshot.data![index].fileData)),
+                    Positioned(
+                      right: 5,
+                      top: 5,
+                      child: GestureDetector(
+                                        onTap:(){
+                                        controller.shareIt(snapshot.data![index]);
+                                      }, 
+                                      child: Container(
+                                        padding: const EdgeInsets.all(3),
+                                        decoration: BoxDecoration(shape: BoxShape.circle,color: ProjectColors.platinum),
+                                        child: Icon(Icons.share,color: ProjectColors.richBlack,))),
+                    ),
+                                     Positioned(
+                      left: 5,
+                      top: 5,
+                      child: GestureDetector(
+                                      onTap:(){
+                                      controller.downloadFile(snapshot.data![index]);
+                                    }, 
+                                    child: Container(
+                                      padding: const EdgeInsets.all(3),
+                                      decoration: BoxDecoration(shape: BoxShape.circle,color: ProjectColors.platinum),
+                                      child: Icon(Icons.download ,color: ProjectColors.richBlack,))))
+                  ],
+                ),
+              ),
             );
-          })),
+          }):Container(
+                            height: Get.height,
+                            child: const Center(
+                              child: Text("There is no Images, Please Post one"),
+                            ),
+                          )),
       floatingActionButton: FloatingActionButton(
         onPressed: controller.gotoEditorPage,
         backgroundColor: ProjectColors.platinum,

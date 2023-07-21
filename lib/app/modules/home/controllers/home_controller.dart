@@ -31,8 +31,6 @@ class HomeController extends GetxController {
       );
       GlobalVariables.instance.objectbox.addImage(
       ImageFiles(fileData: convertedImage,uid: GlobalVariables.instance.user!.uid));
-    }else{
-      // not poseted
     }
   }
 }

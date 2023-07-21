@@ -36,6 +36,7 @@ class ObjectBox {
   }
 
   Future<void> addImage(ImageFiles imageFiles) => _imageFileBox.putAsync(imageFiles);
+  updateImage(ImageFiles imageFiles) => _imageFileBox.put(imageFiles);
   Future<void> removeImage(int id) => _imageFileBox.removeAsync(id);
   Future<int> addUser(UserDetails userDetails) => _userDetailsBox.putAsync(userDetails);
   checkUserExist(String email){

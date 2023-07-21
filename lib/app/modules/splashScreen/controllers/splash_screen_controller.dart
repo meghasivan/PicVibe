@@ -34,6 +34,4 @@ class SplashScreenController extends GetxController {
       }
     });
   }
-
-  
 }

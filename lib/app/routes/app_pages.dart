@@ -1,7 +1,4 @@
 import 'package:get/get.dart';
-
-import '../modules/editingScreen/bindings/editing_screen_binding.dart';
-import '../modules/editingScreen/views/editing_screen_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/loginScreen/bindings/login_screen_binding.dart';
@@ -35,13 +32,8 @@ class AppPages {
       binding: LoginScreenBinding(),
     ),
     GetPage(
-      name: _Paths.EDITING_SCREEN,
-      page: () => const EditingScreenView(),
-      binding: EditingScreenBinding(),
-    ),
-    GetPage(
       name: _Paths.PROFILE_SCREEN,
-      page: () => const ProfileScreenView(),
+      page: () => ProfileScreenView(),
       binding: ProfileScreenBinding(),
     ),
   ];

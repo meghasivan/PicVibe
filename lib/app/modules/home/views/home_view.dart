@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:zesdro/app/model/imageFiles.dart';
 import 'package:zesdro/app/utils/colors.dart';
 import 'package:zesdro/app/utils/globalVariables.dart';
 import 'package:zesdro/app/utils/images.dart';
@@ -19,11 +20,20 @@ class HomeView extends GetView<HomeController> {
             GestureDetector(
               onTap: controller.gotoProfilePage,
               child: Container(
-                padding: const EdgeInsets.all(15),
+                padding: (GlobalVariables.instance.user!.photoURL != "")
+                    ? const EdgeInsets.all(25)
+                    : const EdgeInsets.all(15),
+                margin: const EdgeInsets.only(right:8),
                 decoration: BoxDecoration(
-                    shape: BoxShape.circle, color: ProjectColors.platinum),
+                    shape: BoxShape.circle,
+                    color: ProjectColors.platinum,
+                    image: (GlobalVariables.instance.user!.photoURL != "")
+                        ? DecorationImage(
+                            image: NetworkImage(
+                                GlobalVariables.instance.user!.photoURL))
+                        : null),
                 child: (GlobalVariables.instance.user!.photoURL != "")
-                    ? Image.network(GlobalVariables.instance.user!.photoURL)
+                    ? Container()
                     : Text(
                         GlobalVariables.instance.user!.displayName[0],
                         style: TextStyle(
@@ -35,11 +45,18 @@ class HomeView extends GetView<HomeController> {
             )
           ],
           backgroundColor: ProjectColors.white),
-      body: ListView.builder(
-          itemCount: controller.images.length,
+      body: StreamBuilder<List<ImageFiles>>(
+                  stream: GlobalVariables.instance.objectbox.getImages(),
+                  builder: (context, snapshot) => ListView.builder(
+          shrinkWrap: true,
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          itemCount: snapshot.hasData ? snapshot.data!.length : 0,
           itemBuilder: (context, index) {
-            return Container();
-          }),
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.memory(snapshot.data![index].fileData),
+            );
+          })),
       floatingActionButton: FloatingActionButton(
         onPressed: controller.gotoEditorPage,
         backgroundColor: ProjectColors.platinum,

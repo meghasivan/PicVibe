@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:zesdro/app/utils/dbHelper.dart';
+import 'package:zesdro/app/utils/globalVariables.dart';
 import 'package:zesdro/firebase_options.dart';
 
 import 'app/routes/app_pages.dart';
@@ -13,6 +15,7 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   GetStorage.init();
+  GlobalVariables.instance.objectbox = await ObjectBox.create();
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,

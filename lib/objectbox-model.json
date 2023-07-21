@@ -1,0 +1,76 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:8552126460576003009",
+      "lastPropertyId": "5:3833971299811953620",
+      "name": "UserDetails",
+      "properties": [
+        {
+          "id": "1:7177405351298956989",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8159288889908096404",
+          "name": "displayName",
+          "type": 9
+        },
+        {
+          "id": "3:4065665874227546112",
+          "name": "email",
+          "type": 9
+        },
+        {
+          "id": "4:2509920761691302568",
+          "name": "uid",
+          "type": 9
+        },
+        {
+          "id": "5:3833971299811953620",
+          "name": "photoURL",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:8304382514647320880",
+      "lastPropertyId": "3:5631097148137709746",
+      "name": "ImageFiles",
+      "properties": [
+        {
+          "id": "1:8136668588878682489",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:8435695904568623736",
+          "name": "fileData",
+          "type": 23
+        },
+        {
+          "id": "3:5631097148137709746",
+          "name": "uid",
+          "type": 6
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "2:8304382514647320880",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [],
+  "retiredRelationUids": [],
+  "version": 1
+}

@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "1058562584396",
-    "project_id": "zesdro-e2100",
-    "storage_bucket": "zesdro-e2100.appspot.com"
+    "project_number": "170890932380",
+    "project_id": "pic-vibe-beccd",
+    "storage_bucket": "pic-vibe-beccd.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1058562584396:android:da6df11767293b1877e9e9",
+        "mobilesdk_app_id": "1:170890932380:android:34920b79fd4d266987bd59",
         "android_client_info": {
-          "package_name": "com.example.zesdro"
+          "package_name": "com.picvibe"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1058562584396-rasf263ja3m5t36knsfcd35uamb13s1p.apps.googleusercontent.com",
+          "client_id": "170890932380-6e68hbjksimhh3agtr2rg8e0v652ctes.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.picvibe",
+            "certificate_hash": "6b1749250a16d20c8e688f4dc78a2b50be5fe2a4"
+          }
+        },
+        {
+          "client_id": "170890932380-mnk8a6gift46tcsv90ku4ei2oivenk4v.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD6V34d50uIbIAEcPescgECiC6leVhJwRE"
+          "current_key": "AIzaSyCB2nKoGiV23oJGpPU68mlvdEMrTSHZECY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1058562584396-rasf263ja3m5t36knsfcd35uamb13s1p.apps.googleusercontent.com",
+              "client_id": "170890932380-g85i7k8vrb8j95rq628co1luvg7ci2gk.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

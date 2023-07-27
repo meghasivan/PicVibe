@@ -1,6 +1,6 @@
-class TextData{
-  static const zesdro = "Zesdro Technologies";
-  static const version = "V 1.0.0";
-  static const login = "Login";
+class TextData {
+  static const picVibe = "PicVibe";
+
+  static const getIn = "Get In Here!";
   static const user = "user";
 }

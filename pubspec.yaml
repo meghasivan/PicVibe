@@ -1,4 +1,4 @@
-name: zesdro
+name: picvibe
 version: 1.0.0+1
 publish_to: none
 description: A new Flutter project.
@@ -8,8 +8,6 @@ environment:
 dependencies: 
   cupertino_icons: ^1.0.2
   get: 4.6.5
-  flutter: 
-    sdk: flutter
   firebase_core: ^2.15.0
   image_editor_plus: ^0.2.5
   lottie: ^2.5.0
@@ -19,16 +17,25 @@ dependencies:
   objectbox: ^2.1.0
   objectbox_flutter_libs: ^2.1.0
   share_plus: ^7.0.2
-  path_provider: ^2.0.15 
-  
+  path_provider: ^2.0.15
+  rename: ^2.1.1
+  flutter_launcher_icons: 0.13.1
+  flutter: 
+    sdk: flutter
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
-  flutter_test: 
-    sdk: flutter
   build_runner: ^2.4.6
   objectbox_generator: ^2.1.0
+  flutter_test: 
+    sdk: flutter
 
+flutter_launcher_icons: 
+  android: launcher_icon
+  image_path: assets/logo/logo.png
+  flutter_lints: ^2.0.0
+  ios: true
+  min_sdk_android: 21
 
 flutter: 
   assets: 
